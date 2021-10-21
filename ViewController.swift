@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    //button link, function being called
     @IBAction func keyPressed(_ sender: UIButton) {
         playSound()
     }
