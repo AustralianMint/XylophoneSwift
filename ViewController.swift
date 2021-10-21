@@ -7,10 +7,12 @@
 //
 
 import UIKit
+//New API to play sound
 import AVFoundation
 
 class ViewController: UIViewController {
     
+    //Audio player Instance
     var player: AVAudioPlayer!
 
     override func viewDidLoad() {
@@ -22,6 +24,7 @@ class ViewController: UIViewController {
     }
     
     func playSound() {
+        //locate audio file stored elsewhere
         let url = Bundle.main.url(forResource: "C", withExtension: "wav")
         player = try! AVAudioPlayer(contentsOf: url!)
         player.play()
