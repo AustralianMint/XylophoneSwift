@@ -17,9 +17,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    //Button link to InterfaceBuilder. Func w/ parameters to play sound
+    //  Button link to InterfaceBuilder. Func w/ parameters to play sound
     @IBAction func keyPressed(_ sender: UIButton) {
+        //Play sound and dim button opacity by half
         playSound(soundName: sender.currentTitle!)
+        sender.alpha = 0.5
+        
+        //Pump up opacity after two seconds w/ this func
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            sender.alpha = 1.0
+        }
     }
     
     func playSound(soundName: String) {
